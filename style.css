@@ -1,0 +1,87 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+:root{
+    --bg-main:#464646;
+    --bg-card:#2D2727;
+    --borde-color:#efc745;
+
+}
+h1{
+    color: white;
+    font-size: 2rem;
+}
+span{
+    color: var(--borde-color);
+}
+body{
+height: 100vh;
+background-color: var(--bg-main);
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+gap: 2rem;
+}
+#card-sec{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 1rem;
+}
+/* .card{
+    width: 5rem;
+    height: 5rem;
+    background-color: var(--bg-card);
+    background-size: contain;
+    border-radius: .6rem;
+    padding: 2rem;
+    box-shadow: rgba(149, 157, 165, 0.2)0px,8px,20px;
+    
+}
+.card-select{
+    border: 2px solid var(--borde-color);
+    
+}
+.card-match{
+    border: 2px solid green;
+} */
+.card{
+    position: relative;
+    transition: all .4s linear;
+    transform-style: preserve-3d;
+    /* padding: 2rem; */
+}
+.card, .back, .front{
+    height: 5rem;
+    width: 5rem;
+}
+.back, .front{
+   position: absolute;
+   backface-visibility: hidden;
+}
+.front{
+    background: var(--borde-color);
+    background-size: contain;
+    border-radius: .6rem;
+    padding: 2rem;
+
+}
+.back{
+    transform: rotateY(180deg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding: 2rem;
+    border-radius: .6rem;
+
+}
+.card-select{
+    transform: rotateY(180deg);
+}
+.card-match .front{
+    background-color: var(--bg-card);
+
+}
